@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "archer"
+version = "0.1.0"
+description = "ArCHer: Alignment-aware contrastive homolog retrieval"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "ArCHer Contributors" }]
+
+dependencies = [
+  "torch==2.6.0",
+  "triton==3.2.0; sys_platform == 'linux'",
+  "transformers==4.46.3",
+  "huggingface_hub==0.36.2",
+  "sentencepiece==0.2.0",
+  "numpy==1.26.4",
+  "pandas==2.3.3",
+  "tqdm==4.67.3",
+]
+
+[project.scripts]
+archer = "run_archer:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+py-modules = [
+  "run_archer",
+  "encoder",
+  "plm_wrapper",
+  "sim",
+  "dtw_triton_kernels",
+  "utils",
+  "train",
+  "retriever",
+  "infonce",
+  "data",
+  "cache_plm",
+]

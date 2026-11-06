@@ -1,0 +1,30 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Model checkpoints (downloaded separately, see README)
+checkpoints/
+
+# Outputs and cluster-local files
+outputs/
+slurm/
+*.out
+*.log
+
+# Editor / OS files
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+.ipynb_checkpoints/
+
+# Training outputs and caches (src/retriever.py, src/plm_wrapper.py defaults)
+artifacts/
+plm_cache/
